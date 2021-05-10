@@ -186,7 +186,6 @@ namespace UnityEngine.Perception.GroundTruth
                         {
                             keypoint.x = 0;
                             keypoint.y = 0;
-                            keypoint.z = 0;
                         }
                         else
                         {
@@ -307,7 +306,9 @@ namespace UnityEngine.Perception.GroundTruth
             /// <summary>
             /// The keypoint's z-coordinate pixel location
             /// </summary>
-            public float z;
+            public float loc_x;
+            public float loc_y;
+            public float loc_z;
             /// <summary>
             /// The state of the point,
             /// 0 = not present,
@@ -488,14 +489,18 @@ namespace UnityEngine.Perception.GroundTruth
             {
                 keypoints[idx].x = 0;
                 keypoints[idx].y = 0;
-                keypoints[idx].z = 0;
+                keypoints[idx].loc_x = 0;
+                keypoints[idx].loc_y = 0;
+                keypoints[idx].loc_z = 0;
                 keypoints[idx].state = 0;
             }
             else
             {
                 keypoints[idx].x = loc.x;
                 keypoints[idx].y = loc.y;
-                keypoints[idx].z = loc.z;
+                keypoints[idx].loc_x = loc.x;
+                keypoints[idx].loc_y = loc.y;
+                keypoints[idx].loc_z = loc.z;
                 keypoints[idx].state = 2;
             }
         }
